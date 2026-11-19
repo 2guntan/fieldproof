@@ -1,6 +1,6 @@
 # Fieldproof — Glossaire (CONTEXT.md)
 
-Version 0.1 — 19/11/2026 — issue de la séance de cadrage post-réunion PAMECAS.
+Version 0.2 — 19/11/2026 — issue de la séance de cadrage post-réunion PAMECAS.
 
 Fieldproof est une plateforme qui collecte sur le terrain les données d'un client, génère les documents d'ouverture de compte et de demande de crédit au format d'un prêteur, les lui envoie, et apporte la preuve par satellite que l'exploitation existe et est cultivée — avant et pendant le crédit.
 
@@ -57,7 +57,14 @@ _Éviter_ : transmission (terme Agriva réservé à la création d'un dossier de
 
 **Retour du prêteur** : statut déclaré par le prêteur sur un paquet : Reçu → Intégré (avec sa référence : numéro de compte ou de dossier) | Rejeté (avec motif). Le numéro de compte reçu débloque le paquet de demande de crédit.
 
-**Consentement** : accord électronique (OTP par SMS ou signature à l'écran), horodaté, donné par finalité : (1) constitution et envoi au prêteur choisi, (2) suivi satellite pendant le crédit, (3) facultatif, usage anonymisé. Les finalités 1 et 2 sont des pièces bloquantes de la complétude. Un retrait arrête le suivi et est notifié au prêteur.
+**Consentement** : accord du client, horodaté et géolocalisé, donné par finalité : (1) constitution et envoi au prêteur choisi, (2) suivi satellite pendant le crédit, (3) facultatif, usage anonymisé. Recueilli par défaut par signature à l'écran (ou trait/empreinte dessinée) et photo du client ; OTP par SMS seulement si le prêteur l'exige. Les finalités 1 et 2 sont des pièces bloquantes de la complétude. Un retrait arrête le suivi et est notifié au prêteur.
+
+**Socle du dossier** : données collectées pour tout prêteur (identité, adresse, exploitation, parcelles, besoin, consentement), fixes et codées.
+
+**Champ complémentaire** : donnée propre à un prêteur, déclarée dans sa configuration et affichée automatiquement par l'app de collecte.
+
+**Mapping** : correspondance, dans la configuration prêteur, entre chaque champ du formulaire du prêteur et une donnée du dossier client, avec ses transformations (format, majuscules, case cochée selon une valeur). La complétude se déduit du mapping.
+_Éviter_ : remplir le formulaire du prêteur sur le terrain.
 
 ## Module Watch (suivi satellite)
 
@@ -76,4 +83,4 @@ _Éviter_ : envoyer une alerte brute au prêteur.
 
 ## Configuration
 
-**Configuration prêteur** : ensemble des paramètres propres à un prêteur : modèles de formulaires, pièces obligatoires, caisses et zones, adresses de réception, format de l'annexe. Un nouveau prêteur se branche par configuration, sans code. Au pilote, la configuration est faite par IBRIZ, sans écran d'administration.
+**Configuration prêteur** : ensemble des paramètres propres à un prêteur : modèles de formulaires, mapping, champs complémentaires, pièces obligatoires, caisses et zones, adresses de réception, format de l'annexe. Un nouveau prêteur se branche par configuration, sans code. Au pilote, la configuration est faite par IBRIZ, sans écran d'administration.
